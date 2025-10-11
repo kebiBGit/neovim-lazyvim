@@ -18,7 +18,7 @@ return {
       vim.keymap.set("n", "<C-f>", builtin.find_files, {})
       vim.keymap.set("n", "<leader>ff", builtin.find_files,   { desc = "Telescope find files" })
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-      vim.keymap.set("n", "<leader><leader>", builtin.oldfiles, {})
+      vim.keymap.set("n", "<leader>r", builtin.oldfiles, {})
 
       require("telescope").load_extension("ui-select")
     end,
