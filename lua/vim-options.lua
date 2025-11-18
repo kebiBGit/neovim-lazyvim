@@ -13,6 +13,20 @@ vim.opt.swapfile = false
 --vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 --vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
-vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
+vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>')
 vim.wo.number = true
 vim.wo.relativenumber = true
+vim.opt.scrolloff=10
+vim.opt.hlsearch=true
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    vim.highlight.on_yank({ timeout = 300 })  -- highlight for 200ms
+  end,
+})
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
+vim.keymap.set("n", "<leader>m", ":tabp<CR>")
+vim.keymap.set("n", "<leader>n", ":tabn<CR>")
+vim.keymap.set("n", "<leader>tab", ":tabnew<CR>")
+vim.keymap.set("n", "<leader>cl", ":tabc<CR>")
+vim.keymap.set("n", "<leader>term", ":tab term<CR>")
