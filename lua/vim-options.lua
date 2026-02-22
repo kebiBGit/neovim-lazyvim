@@ -14,7 +14,7 @@ vim.opt.swapfile = false
 --vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 --vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
-vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>')
+vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>', { silent = true })
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.opt.scrolloff=10
