@@ -19,6 +19,9 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 vim.opt.scrolloff=10
 vim.opt.hlsearch=true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.linebreak = true
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
     vim.highlight.on_yank({ timeout = 300 })  -- highlight for 200ms
@@ -26,6 +29,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
+vim.keymap.set("n", "<leader>p", '"+p', { noremap = true })
+vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { noremap = true })
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { noremap = true })
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]])
 vim.keymap.set("n", "<leader>m", ":tabp<CR>")
 vim.keymap.set("n", "<leader>n", ":tabn<CR>")
 vim.keymap.set("n", "<leader>tab", ":tabnew<CR>")
