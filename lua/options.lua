@@ -22,6 +22,7 @@ vim.opt.hlsearch=true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.o.autoindent = true
+vim.opt.termguicolors = true
 vim.opt.linebreak = true
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
